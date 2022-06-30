@@ -6,7 +6,7 @@
   "homepage": "https://akiselyoff.github.io/project-07-filmoteka",
   "scripts": {
     "dev": "parcel src/*.html --open",
-    "build": "parcel build src/*.html --public-url /project-07/"
+    "build": "parcel build src/*.html --public-url /project-07-filmoteka/"
   },
   "repository": {
     "type": "git",
