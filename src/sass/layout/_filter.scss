@@ -1,0 +1,162 @@
+// ПАЛИТРА для светлой и темной темы
+.filter {
+  --filter-main-btn-text-color: #000000;
+  --filter-main-btn-active-text-color: #ff6b08;
+  --filter-main-btn-bg-color: transparent;
+
+  --filter-primary-bg-color: #ece9e5da;
+
+  --filter-primary-text-color: #ffffff;
+  --filter-extra-text-color: #f3c9ac;
+
+  --filter-primary-btn-color: #ee9d63;
+  --filter-accent-btn-color: #ff6b08;
+
+  --filter-btn-clear-text-color: #545454;
+  --filter-btn-clear-active-text-color: #ff6b08;
+
+  --filter-pagination-color: #ee9d63;
+  --filter-pagination-active-color: #ff6b08;
+
+  --filter-scrollbar-first-color: #ff6b08;
+  --filter-scrollbar-second-color: #ee9d63;
+
+  &.dark {
+    --filter-main-btn-text-color: #ffffff;
+    --filter-main-btn-active-text-color: #ffffff;
+
+    --filter-primary-bg-color: rgba(57, 52, 69, 0.908);
+
+    --filter-extra-text-color: rgb(137, 133, 152);
+
+    --filter-primary-btn-color: #403a53;
+    --filter-accent-btn-color: #615878;
+
+    --filter-btn-clear-active-text-color: rgb(137, 133, 152);
+
+    --filter-pagination-color: #675c91;
+    --filter-pagination-active-color: #70668c;
+
+    --filter-scrollbar-first-color: #211d2e;
+    --filter-scrollbar-second-color: #615878;
+  }
+}
+
+.filter__btn {
+  color: var(--filter-main-btn-text-color);
+  border: none;
+  background-color: inherit;
+  height: 32px;
+  margin-right: 5px;
+  background-color: var(--filter-main-btn-bg-color);
+  border-radius: 50%;
+
+  transition: background-color 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter__svg {
+  fill: currentColor;
+
+  transition: fill 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  .filter__primaryText--active & {
+    fill: var(--filter-primary-text-color);
+  }
+}
+
+.filter__body {
+  box-sizing: border-box;
+  position: relative;
+
+  display: inline-block;
+  width: 100%;
+
+  z-index: 3;
+  opacity: 1;
+  visibility: visible;
+
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), visibility 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+  }
+}
+.filter__content {
+  padding: 16px 0 0 0;
+  border-radius: 6px;
+  color: var(--filter-primary-text-color);
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.filter__list {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+.filter__clear {
+  display: inline-flex;
+  align-items: center;
+  color: var(--filter-btn-clear-active-text-color);
+  margin-top: 5px;
+
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(115%);
+    cursor: pointer;
+  }
+  &--notActive {
+    pointer-events: none;
+
+    color: var(--filter-btn-clear-text-color);
+  }
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.filter__iconClear {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+
+  .filter__clear:hover &,
+  .filter__clear:focus & {
+    stroke: var(--filter-btn-clear-active-text-color);
+    cursor: pointer;
+  }
+  .filter__clear--notActive & {
+    pointer-events: none;
+
+    stroke: var(--filter-btn-clear-text-color);
+  }
+  @media screen and (min-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.filter__clear-text {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+}
